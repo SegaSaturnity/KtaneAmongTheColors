@@ -40,7 +40,7 @@ public class amongTheColors : MonoBehaviour {
 		offset -= (bombInfo.GetPortCount(Port.Serial) * 2) + (bombInfo.GetPortCount(Port.RJ45) * 2);
 		Debug.LogFormat("[Among the Colors #{0}] After Serial RJ: {1}", moduleId, offset);
 		foreach ( string module in bombInfo.GetModuleNames() ) {
-			if ( module.Contains("Color") || module.Contains("Colour") ) offset += 5;
+			if ( module.ToLower().Contains("color") || module.ToLower().Contains("colour") ) offset += 5;
 		}
 		offset -= 5;
 		Debug.LogFormat("[Among the Colors #{0}] After Colors Mods: {1}", moduleId, offset);
